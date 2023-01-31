@@ -1,0 +1,63 @@
+let arrA = [
+    {
+        id: 1,
+        name: 'A',
+        age: 29,
+    },
+    {
+        id: 2,
+        name: 'B',
+        age: 33,
+    },
+    {
+        id: 3,
+        name: 'C',
+        age: 35,
+    },
+    {
+        id: 4,
+        name: 'D',
+        age: 39,
+    },
+    {
+        id: 5,
+        name: 'E',
+        age: 40,
+    }
+    ];
+    
+    let arrB = [
+    {
+        id: 1,
+        city: 'CHD',
+        country: 'India',
+    },
+    {
+        id: 3,
+        city: 'Montreal',
+        country: 'Canada',
+    },
+    {
+        id: 5,
+        city: 'San Fransico',
+        age: 'America',
+    }
+    ];
+
+    let obj = {};
+    
+    arrB.forEach((el)=> {
+        obj[el.id] = {...el};
+    })
+    
+    arrA.forEach((el)=> {
+    obj[el.id] = obj[el.id] ? {...obj[el.id],...el}: {...el}
+    })
+    
+    let result = Object.values(obj)
+
+    let output = result.filter((el) => el.city)
+    
+    console.log(output)
+    
+    
