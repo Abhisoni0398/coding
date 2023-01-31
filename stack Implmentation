@@ -1,0 +1,38 @@
+class Stack {
+    constructor () {
+        this.data = [];
+        this.top = 0;
+    }
+    pushData(element){
+        this.data.push(element)
+        this.top ++;
+    }
+    popData() {
+     this.data.pop()
+        this.top --
+    }
+    size(){
+        return this.data.length;
+    }
+    peek() {
+        return this.data[this.top-1]
+    }
+    empty() {
+    if(this.data.length == 0){
+        return true
+    }
+    return false;
+    }
+}
+
+let stack = new Stack();
+stack.pushData(10);
+stack.pushData(20);
+stack.pushData(30);
+stack.popData()
+stack.popData()
+stack.pushData(40);
+stack.popData()
+stack.popData()
+stack.size();
+console.log(stack.empty())
